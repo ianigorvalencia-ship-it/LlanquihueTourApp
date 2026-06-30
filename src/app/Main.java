@@ -1,5 +1,6 @@
 package app;
 
+import data.GestorServicios;
 import model.Guia;
 import service.GuiaService;
 import util.ArchivoUtil;
@@ -24,5 +25,12 @@ public class Main {
         GuiaService.buscarPorNombre(
                 guias,
                 "Juan Perez");
+
+        System.out.println();
+
+        System.out.println("===== SERVICIOS TURISTICOS =====");
+
+        GestorServicios gestor = new GestorServicios();
+        gestor.mostrarServicios();
     }
 }
