@@ -1,60 +1,59 @@
 package data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.ExcursionCultural;
 import model.PaseoLacustre;
 import model.RutaGastronomica;
+import model.ServicioTuristico;
 
 public class GestorServicios {
 
+    private List<ServicioTuristico> servicios;
+
+    public GestorServicios() {
+
+        servicios = new ArrayList<>();
+
+        servicios.add(new RutaGastronomica(
+                "Ruta del Salmon",
+                5,
+                4));
+
+        servicios.add(new RutaGastronomica(
+                "Sabores del Sur",
+                3,
+                6));
+
+        servicios.add(new PaseoLacustre(
+                "Lago Llanquihue",
+                2,
+                "Catamaran"));
+
+        servicios.add(new PaseoLacustre(
+                "Todos los Santos",
+                4,
+                "Lancha"));
+
+        servicios.add(new ExcursionCultural(
+                "Museo Colonial",
+                2,
+                "Museo Colonial Aleman"));
+
+        servicios.add(new ExcursionCultural(
+                "Fuerte Historico",
+                3,
+                "Fuerte Reina Luisa"));
+    }
+
     public void mostrarServicios() {
 
-        RutaGastronomica ruta1 =
-                new RutaGastronomica(
-                        "Ruta del Salmon",
-                        5,
-                        4);
+        for (ServicioTuristico servicio : servicios) {
+            servicio.mostrarInformacion();
+            System.out.println();
+        }
 
-        RutaGastronomica ruta2 =
-                new RutaGastronomica(
-                        "Sabores del Sur",
-                        3,
-                        6);
-
-        PaseoLacustre paseo1 =
-                new PaseoLacustre(
-                        "Lago Llanquihue",
-                        2,
-                        "Catamaran");
-
-        PaseoLacustre paseo2 =
-                new PaseoLacustre(
-                        "Todos los Santos",
-                        4,
-                        "Lancha");
-
-        ExcursionCultural excursion1 =
-                new ExcursionCultural(
-                        "Museo Colonial",
-                        2,
-                        "Museo Colonial Aleman");
-
-        ExcursionCultural excursion2 =
-                new ExcursionCultural(
-                        "Fuerte Historico",
-                        3,
-                        "Fuerte Reina Luisa");
-
-        System.out.println(ruta1);
-        System.out.println(ruta2);
-
-        System.out.println();
-
-        System.out.println(paseo1);
-        System.out.println(paseo2);
-
-        System.out.println();
-
-        System.out.println(excursion1);
-        System.out.println(excursion2);
     }
+
 }
