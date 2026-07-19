@@ -1,6 +1,6 @@
 package model;
 
-public class Guia {
+public class Guia implements Registrable {
 
     private Persona persona;
     private RutaTuristica ruta;
@@ -16,6 +16,11 @@ public class Guia {
 
     public RutaTuristica getRuta() {
         return ruta;
+    }
+
+    @Override
+    public String mostrarResumen() {
+        return "Guía: " + persona.getNombre();
     }
 
     @Override
